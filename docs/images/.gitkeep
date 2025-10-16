@@ -1,0 +1,25 @@
+# Placeholder para imágenes
+
+Este archivo mantiene la carpeta de imágenes en el repositorio.
+
+Las imágenes se agregarán gradualmente según las necesidades de documentación.
+
+## Estado de las Imágenes
+
+⏳ **Pendientes de agregar:**
+- cotecmar-banner.png
+- dashboard-preview.png
+- tech-stack.png
+- database-schema.png
+- frontend-architecture.png
+- login-process.png
+- registration-form-steps.png
+- Y todas las demás mencionadas en la documentación
+
+## Instrucciones
+
+Para agregar imágenes:
+1. Capturar/crear la imagen
+2. Optimizar para web
+3. Guardar en esta carpeta
+4. Actualizar referencias en README
