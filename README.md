@@ -612,9 +612,8 @@ routes/
 Una vez finalizada la revisión del código, favor contactar para agendar la sustentación técnica del proyecto.
 
 **Desarrollador**: Aldair Gutierrez Guerrero
-**Email**: [Tu email aquí]
 **GitHub**: https://github.com/aldairg-dev/ptc-cotecmar
-**LinkedIn**: [Tu perfil de LinkedIn]
+**LinkedIn**: https://www.linkedin.com/in/aldair-gutierrez-guerrero
 
 ---
 
