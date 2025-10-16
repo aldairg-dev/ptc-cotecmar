@@ -98,7 +98,7 @@
                         </div>
                     </Link>
 
-                    <Link :href="route('minucia.registros')"
+                    <Link :href="route('minucia.listado')"
                           class="group bg-white/80 backdrop-blur-sm border border-emerald-200 overflow-hidden shadow-xl sm:rounded-xl p-8 hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl">
                         <div class="text-center">
                             <div class="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all duration-300 shadow-lg">

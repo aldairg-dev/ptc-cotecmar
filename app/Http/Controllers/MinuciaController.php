@@ -127,7 +127,7 @@ class MinuciaController extends Controller
             'peso_real' => $request->peso_real,
         ]);
 
-        return redirect()->route('minucia.registros')->with('success', 'Peso real actualizado exitosamente');
+        return redirect()->route('minucia.listado')->with('success', 'Peso real actualizado exitosamente');
     }
 
 
@@ -144,6 +144,6 @@ class MinuciaController extends Controller
             'estado' => 'Pendiente'
         ]);
 
-        return redirect()->route('minucia.registros')->with('success', 'Registro eliminado. Pieza devuelta a estado Pendiente.');
+        return redirect()->route('minucia.listado')->with('success', 'Registro eliminado. Pieza devuelta a estado Pendiente.');
     }
 }

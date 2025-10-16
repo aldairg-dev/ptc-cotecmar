@@ -19,12 +19,12 @@ Route::get('/', function () {
 });
 
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
+    'auth',
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [MinuciaController::class, 'index'])->name('dashboard');
 
+    // API endpoints para formularios dinámicos (usando middleware web)
     Route::get('/api/bloques/proyecto/{proyectoId}', [BloqueController::class, 'byProyecto']);
     Route::get('/api/piezas/bloque/{bloqueId}', [PiezaController::class, 'byBloque']);
 
@@ -32,10 +32,10 @@ Route::middleware([
         Route::get('/', [MinuciaController::class, 'index'])->name('index');
         Route::get('/registro', [MinuciaController::class, 'create'])->name('create');
         Route::post('/registro', [MinuciaController::class, 'store'])->name('store');
-        Route::get('/registros', [MinuciaController::class, 'registros'])->name('registros');
-        Route::get('/registros/{id}', [MinuciaController::class, 'show'])->name('show');
-        Route::get('/registros/{id}/editar', [MinuciaController::class, 'edit'])->name('edit');
-        Route::put('/registros/{id}', [MinuciaController::class, 'update'])->name('update');
+        Route::get('/registros', [MinuciaController::class, 'registros'])->name('listado');
+        Route::get('/registros/{id}', [MinuciaController::class, 'show'])->name('ver');
+        Route::get('/registros/{id}/editar', [MinuciaController::class, 'edit'])->name('editar');
+        Route::put('/registros/{id}', [MinuciaController::class, 'update'])->name('actualizar');
         Route::delete('/registros/{id}', [MinuciaController::class, 'destroy'])->name('destroy');
     });
 

@@ -516,11 +516,9 @@ const onPiezaChange = () => {
 };
 
 const calculateDifference = () => {
-    // La diferencia se calcula automáticamente en el computed
 };
 
 const submitForm = () => {
-    // Validaciones en el cliente
     if (
         !form.proyecto_id ||
         !form.bloque_id ||
@@ -539,16 +537,27 @@ const submitForm = () => {
     processing.value = true;
 
     form.post(route("minucia.store"), {
+        preserveScroll: true,
         onSuccess: () => {
-            // Reset form
             form.reset();
             bloques.value = [];
             piezas.value = [];
+            alert("¡Registro guardado exitosamente!");
         },
-        onError: () => {
-            alert(
-                "Error al guardar el registro. Por favor verifique los datos."
-            );
+        onError: (errors) => {
+            console.error('Errores del formulario:', errors);
+
+            // Manejo específico para error 419 (CSRF)
+            if (errors.message && errors.message.includes('419')) {
+                alert("Su sesión ha expirado. La página se recargará para renovar la sesión.");
+                window.location.reload();
+            } else {
+                let errorMessage = "Error al guardar el registro.\n\n";
+                Object.keys(errors).forEach(key => {
+                    errorMessage += `${key}: ${errors[key]}\n`;
+                });
+                alert(errorMessage);
+            }
         },
         onFinish: () => {
             processing.value = false;
@@ -557,9 +566,7 @@ const submitForm = () => {
 };
 
 onMounted(() => {
-    // Actualizar la fecha cada segundo
     setInterval(() => {
-        // El computed se actualiza automáticamente
     }, 1000);
 });
 </script>
