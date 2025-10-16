@@ -14,9 +14,7 @@ class ReporteController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Reporte de piezas pendientes agrupadas por proyectos
-     */
+
     public function piezasPendientes()
     {
         $proyectos = Proyecto::with([
@@ -25,7 +23,6 @@ class ReporteController extends Controller
             }
         ])->get();
 
-        // Filtrar proyectos que tienen piezas pendientes
         $proyectosConPendientes = $proyectos->filter(function ($proyecto) {
             return $proyecto->bloques->some(function ($bloque) {
                 return $bloque->piezas->count() > 0;
@@ -37,9 +34,7 @@ class ReporteController extends Controller
         ]);
     }
 
-    /**
-     * Reporte gráfico por proyecto de piezas pendientes y fabricadas
-     */
+
     public function graficoProyectos()
     {
         $proyectos = Proyecto::with('bloques.piezas')->get();
@@ -72,9 +67,7 @@ class ReporteController extends Controller
         ]);
     }
 
-    /**
-     * API para obtener datos de gráfico
-     */
+
     public function apiGraficoProyectos()
     {
         $proyectos = Proyecto::with('bloques.piezas')->get();

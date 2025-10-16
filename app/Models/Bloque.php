@@ -28,9 +28,4 @@ class Bloque extends Model
     {
         return $this->hasMany(Pieza::class);
     }
-
-    public function registrosMinucia(): HasMany
-    {
-        return $this->hasMany(RegistroMinucia::class);
-    }
 }

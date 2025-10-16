@@ -17,9 +17,7 @@ class MinuciaController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Mostrar el dashboard principal
-     */
+
     public function index()
     {
         return Inertia::render('Minucia/Dashboard', [
@@ -34,9 +32,6 @@ class MinuciaController extends Controller
         ]);
     }
 
-    /**
-     * Mostrar el formulario de registro de minucia
-     */
     public function create()
     {
         return Inertia::render('Minucia/FormularioRegistro', [
@@ -46,9 +41,7 @@ class MinuciaController extends Controller
         ]);
     }
 
-    /**
-     * Procesar el registro de minucia
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -58,18 +51,14 @@ class MinuciaController extends Controller
             'peso_real' => 'required|numeric|min:0',
             'observaciones' => 'nullable|string|max:1000'
         ]);
-
-        // Obtener la pieza seleccionada
         $pieza = Pieza::findOrFail($request->pieza_id);
 
-        // Verificar que la pieza esté en estado Pendiente
         if ($pieza->estado !== 'Pendiente') {
             return redirect()->back()
                 ->withErrors(['pieza_id' => 'Solo se pueden registrar piezas en estado Pendiente'])
                 ->withInput();
         }
 
-        // Actualizar directamente la tabla piezas según requerimientos de la prueba técnica
         $pieza->update([
             'peso_real' => $request->peso_real,
             'estado' => 'Fabricado',
@@ -80,9 +69,7 @@ class MinuciaController extends Controller
         return redirect()->route('minucia.create')->with('success', 'Pieza registrada exitosamente. Estado actualizado a Fabricado.');
     }
 
-    /**
-     * Mostrar el listado de registros (piezas fabricadas)
-     */
+
     public function registros()
     {
         $registros = Pieza::with(['proyecto', 'bloque', 'user'])
@@ -96,9 +83,7 @@ class MinuciaController extends Controller
         ]);
     }
 
-    /**
-     * Mostrar un registro específico (pieza fabricada)
-     */
+
     public function show($id)
     {
         $registro = Pieza::with(['proyecto', 'bloque', 'user'])
@@ -111,9 +96,7 @@ class MinuciaController extends Controller
         ]);
     }
 
-    /**
-     * Mostrar formulario de edición (para corregir peso real)
-     */
+
     public function edit($id)
     {
         $registro = Pieza::with(['proyecto', 'bloque'])
@@ -129,9 +112,6 @@ class MinuciaController extends Controller
         ]);
     }
 
-    /**
-     * Actualizar un registro (peso real de una pieza)
-     */
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -150,16 +130,13 @@ class MinuciaController extends Controller
         return redirect()->route('minucia.registros')->with('success', 'Peso real actualizado exitosamente');
     }
 
-    /**
-     * Eliminar un registro (cambiar estado de pieza de Fabricado a Pendiente)
-     */
+
     public function destroy($id)
     {
         $pieza = Pieza::where('id', $id)
             ->whereNotNull('fecha_registro')
             ->firstOrFail();
 
-        // Revertir estado a Pendiente y limpiar datos de registro
         $pieza->update([
             'peso_real' => null,
             'fecha_registro' => null,

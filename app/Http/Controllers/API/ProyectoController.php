@@ -31,14 +31,14 @@ class ProyectoController extends Controller
 
     public function show(string $id)
     {
-        $proyecto = Proyecto::with(['bloques.piezas', 'registrosMinucia'])->findOrFail($id);
+        $proyecto = Proyecto::with(['bloques.piezas'])->findOrFail($id);
         return response()->json($proyecto);
     }
 
     public function update(Request $request, string $id)
     {
         $proyecto = Proyecto::findOrFail($id);
-        
+
         $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'nullable|string',

@@ -25,7 +25,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [MinuciaController::class, 'index'])->name('dashboard');
 
-    // API endpoints para formularios dinámicos
     Route::get('/api/bloques/proyecto/{proyectoId}', [BloqueController::class, 'byProyecto']);
     Route::get('/api/piezas/bloque/{bloqueId}', [PiezaController::class, 'byBloque']);
 

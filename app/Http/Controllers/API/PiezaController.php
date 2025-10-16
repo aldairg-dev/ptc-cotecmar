@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class PiezaController extends Controller
 {
-    /**
-     * Obtener piezas por bloque con estado pendiente
-     */
+
     public function byBloque($bloqueId)
     {
         $piezas = Pieza::where('bloque_id', $bloqueId)

@@ -29,8 +29,8 @@ class Proyecto extends Model
         return $this->hasMany(Bloque::class);
     }
 
-    public function registrosMinucia(): HasMany
+    public function piezas(): HasMany
     {
-        return $this->hasMany(RegistroMinucia::class);
+        return $this->hasMany(Pieza::class);
     }
 }

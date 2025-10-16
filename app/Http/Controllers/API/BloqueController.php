@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class BloqueController extends Controller
 {
-    /**
-     * Obtener bloques por proyecto
-     */
     public function byProyecto($proyectoId)
     {
         $bloques = Bloque::where('proyecto_id', $proyectoId)
