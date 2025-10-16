@@ -1,7 +1,5 @@
 # 🎨 Estructura de Vistas y Frontend - Sistema COTECMAR
 
-![Frontend Architecture](../docs/images/frontend-architecture.png)
-
 ## 📋 Descripción General
 
 El frontend del Sistema COTECMAR está construido con **Vue.js 3** + **Inertia.js** + **Tailwind CSS**, siguiendo una arquitectura de componentes reutilizables y design system consistente.
@@ -56,18 +54,22 @@ resources/
 ### 🎨 Componentes de UI
 
 #### ApplicationLogo.vue
+
 ```vue
 <!-- Logo principal de COTECMAR -->
 <template>
     <div class="flex items-center">
-        <img src="/images/cotecmar-logo.png" 
-             alt="COTECMAR" 
-             class="h-8 w-auto" />
+        <img
+            src="/images/cotecmar-logo.png"
+            alt="COTECMAR"
+            class="h-8 w-auto"
+        />
     </div>
 </template>
 ```
 
 #### PrimaryButton.vue
+
 ```vue
 <!-- Botón principal con estilos consistentes -->
 <template>
@@ -86,6 +88,7 @@ resources/
 ```
 
 #### TextInput.vue
+
 ```vue
 <!-- Input de texto con validaciones y estilos -->
 <template>
@@ -108,6 +111,7 @@ resources/
 ### AppLayout.vue - Layout Principal
 
 **Estructura**:
+
 ```vue
 <template>
     <div class="min-h-screen bg-gray-100">
@@ -130,11 +134,12 @@ resources/
 ```
 
 **Características**:
-- ✅ Navegación responsive
-- ✅ Menú de usuario con dropdown
-- ✅ Indicador de página activa
-- ✅ Notificaciones toast
-- ✅ Logout automático
+
+-   ✅ Navegación responsive
+-   ✅ Menú de usuario con dropdown
+-   ✅ Indicador de página activa
+-   ✅ Notificaciones toast
+-   ✅ Logout automático
 
 ![App Layout](../docs/images/app-layout.png)
 
@@ -176,6 +181,7 @@ Auth/
 ```
 
 #### Login.vue - Página Principal de Acceso
+
 ```vue
 <template>
     <GuestLayout>
@@ -223,8 +229,13 @@ Auth/
                 <!-- Remember me -->
                 <div class="block mt-4">
                     <label class="flex items-center">
-                        <Checkbox v-model:checked="form.remember" name="remember" />
-                        <span class="ml-2 text-sm text-gray-600">Recordarme</span>
+                        <Checkbox
+                            v-model:checked="form.remember"
+                            name="remember"
+                        />
+                        <span class="ml-2 text-sm text-gray-600"
+                            >Recordarme</span
+                        >
                     </label>
                 </div>
 
@@ -238,7 +249,11 @@ Auth/
                         ¿Olvidaste tu contraseña?
                     </Link>
 
-                    <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <PrimaryButton
+                        class="ml-4"
+                        :class="{ 'opacity-25': form.processing }"
+                        :disabled="form.processing"
+                    >
                         Iniciar Sesión
                     </PrimaryButton>
                 </div>
@@ -255,10 +270,11 @@ Auth/
 ### 🏠 Dashboard (Pages/Dashboard.vue)
 
 **Funcionalidades**:
-- 📊 Estadísticas en tiempo real
-- 📈 Gráficos de progreso por proyecto
-- 🔗 Enlaces rápidos a funciones principales
-- 📱 Design responsive
+
+-   📊 Estadísticas en tiempo real
+-   📈 Gráficos de progreso por proyecto
+-   🔗 Enlaces rápidos a funciones principales
+-   📱 Design responsive
 
 ```vue
 <template>
@@ -273,21 +289,35 @@ Auth/
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div
+                        class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
+                    >
                         <div class="p-6 bg-white border-b border-gray-200">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
-                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <div
+                                        class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"
+                                    >
+                                        <svg
+                                            class="w-4 h-4 text-white"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            />
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="ml-4">
-                                    <p class="text-sm font-medium text-gray-500 truncate">
+                                    <p
+                                        class="text-sm font-medium text-gray-500 truncate"
+                                    >
                                         Total Proyectos
                                     </p>
-                                    <p class="text-lg font-semibold text-gray-900">
+                                    <p
+                                        class="text-lg font-semibold text-gray-900"
+                                    >
                                         {{ estadisticas.total_proyectos }}
                                     </p>
                                 </div>
@@ -300,25 +330,46 @@ Auth/
                 <!-- Charts Section -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Gráfico de barras -->
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div
+                        class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
+                    >
                         <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-4">Progreso por Proyecto</h3>
+                            <h3 class="text-lg font-semibold mb-4">
+                                Progreso por Proyecto
+                            </h3>
                             <canvas id="proyectosChart"></canvas>
                         </div>
                     </div>
 
                     <!-- Lista de piezas pendientes -->
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div
+                        class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
+                    >
                         <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-4">Piezas Pendientes</h3>
+                            <h3 class="text-lg font-semibold mb-4">
+                                Piezas Pendientes
+                            </h3>
                             <div class="space-y-3">
-                                <div v-for="pieza in piezasPendientes.slice(0, 5)" :key="pieza.id" 
-                                     class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                <div
+                                    v-for="pieza in piezasPendientes.slice(
+                                        0,
+                                        5
+                                    )"
+                                    :key="pieza.id"
+                                    class="flex justify-between items-center p-3 bg-gray-50 rounded"
+                                >
                                     <div>
-                                        <p class="font-medium">{{ pieza.codigo }}</p>
-                                        <p class="text-sm text-gray-600">{{ pieza.proyecto_nombre }}</p>
+                                        <p class="font-medium">
+                                            {{ pieza.codigo }}
+                                        </p>
+                                        <p class="text-sm text-gray-600">
+                                            {{ pieza.proyecto_nombre }}
+                                        </p>
                                     </div>
-                                    <span class="text-sm text-orange-600 font-medium">Pendiente</span>
+                                    <span
+                                        class="text-sm text-orange-600 font-medium"
+                                        >Pendiente</span
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -346,39 +397,62 @@ Minucia/
 #### FormularioRegistro.vue - Componente Principal ⭐
 
 **Características**:
-- ✅ Selects dependientes (Proyecto → Bloque → Pieza)
-- ✅ Carga automática de peso teórico
-- ✅ Cálculo en tiempo real de diferencia de peso
-- ✅ Validaciones en cliente
-- ✅ Manejo de estados de carga
-- ✅ Design responsive
+
+-   ✅ Selects dependientes (Proyecto → Bloque → Pieza)
+-   ✅ Carga automática de peso teórico
+-   ✅ Cálculo en tiempo real de diferencia de peso
+-   ✅ Validaciones en cliente
+-   ✅ Manejo de estados de carga
+-   ✅ Design responsive
 
 ```vue
 <template>
     <AppLayout title="Registro de Minucia">
         <template #header>
-            <div class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900">
+            <div
+                class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900"
+            >
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <h2 class="font-bold text-2xl text-white leading-tight flex items-center">
-                        <svg class="w-8 h-8 mr-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    <h2
+                        class="font-bold text-2xl text-white leading-tight flex items-center"
+                    >
+                        <svg
+                            class="w-8 h-8 mr-3 text-blue-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            />
                         </svg>
                         Registro de Minucia
                     </h2>
-                    <p class="text-blue-200 mt-2">Registrar nueva pieza en el sistema</p>
+                    <p class="text-blue-200 mt-2">
+                        Registrar nueva pieza en el sistema
+                    </p>
                 </div>
             </div>
         </template>
 
-        <div class="py-12 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+        <div
+            class="py-12 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen"
+        >
             <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white/80 backdrop-blur-sm border border-blue-200 overflow-hidden shadow-2xl sm:rounded-2xl">
+                <div
+                    class="bg-white/80 backdrop-blur-sm border border-blue-200 overflow-hidden shadow-2xl sm:rounded-2xl"
+                >
                     <div class="p-8">
                         <form @submit.prevent="submitForm" class="space-y-8">
                             <!-- Fecha y Usuario -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-3">
+                                    <label
+                                        class="block text-sm font-bold text-slate-700 mb-3"
+                                    >
                                         Fecha y Hora de Registro
                                     </label>
                                     <input
@@ -389,7 +463,9 @@ Minucia/
                                     />
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-3">
+                                    <label
+                                        class="block text-sm font-bold text-slate-700 mb-3"
+                                    >
                                         Usuario
                                     </label>
                                     <input
@@ -403,7 +479,10 @@ Minucia/
 
                             <!-- Selección de Proyecto -->
                             <div>
-                                <label for="proyecto_id" class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    for="proyecto_id"
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Proyecto *
                                 </label>
                                 <select
@@ -411,21 +490,37 @@ Minucia/
                                     v-model="form.proyecto_id"
                                     @change="onProyectoChange"
                                     class="w-full px-4 py-3 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm transition-all duration-200 hover:border-blue-300"
-                                    :class="{ 'border-red-400 focus:ring-red-500 focus:border-red-500': errors.proyecto_id }"
+                                    :class="{
+                                        'border-red-400 focus:ring-red-500 focus:border-red-500':
+                                            errors.proyecto_id,
+                                    }"
                                 >
-                                    <option value="">Seleccione un proyecto</option>
-                                    <option v-for="proyecto in proyectos" :key="proyecto.id" :value="proyecto.id">
-                                        {{ proyecto.codigo }} - {{ proyecto.nombre }}
+                                    <option value="">
+                                        Seleccione un proyecto
+                                    </option>
+                                    <option
+                                        v-for="proyecto in proyectos"
+                                        :key="proyecto.id"
+                                        :value="proyecto.id"
+                                    >
+                                        {{ proyecto.codigo }} -
+                                        {{ proyecto.nombre }}
                                     </option>
                                 </select>
-                                <p v-if="errors.proyecto_id" class="mt-2 text-sm text-red-600">
+                                <p
+                                    v-if="errors.proyecto_id"
+                                    class="mt-2 text-sm text-red-600"
+                                >
                                     {{ errors.proyecto_id }}
                                 </p>
                             </div>
 
                             <!-- Selección de Bloque -->
                             <div>
-                                <label for="bloque_id" class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    for="bloque_id"
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Bloque *
                                 </label>
                                 <select
@@ -436,17 +531,29 @@ Minucia/
                                     class="w-full px-4 py-3 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm transition-all duration-200 hover:border-blue-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
                                 >
                                     <option value="">
-                                        {{ bloques.length ? 'Seleccione un bloque' : 'Primero seleccione un proyecto' }}
+                                        {{
+                                            bloques.length
+                                                ? "Seleccione un bloque"
+                                                : "Primero seleccione un proyecto"
+                                        }}
                                     </option>
-                                    <option v-for="bloque in bloques" :key="bloque.id" :value="bloque.id">
-                                        {{ bloque.codigo }} - {{ bloque.nombre }}
+                                    <option
+                                        v-for="bloque in bloques"
+                                        :key="bloque.id"
+                                        :value="bloque.id"
+                                    >
+                                        {{ bloque.codigo }} -
+                                        {{ bloque.nombre }}
                                     </option>
                                 </select>
                             </div>
 
                             <!-- Selección de Pieza -->
                             <div>
-                                <label for="pieza_id" class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    for="pieza_id"
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Pieza *
                                 </label>
                                 <select
@@ -457,22 +564,40 @@ Minucia/
                                     class="w-full px-4 py-3 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm transition-all duration-200 hover:border-blue-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
                                 >
                                     <option value="">
-                                        {{ piezas.length ? 'Seleccione una pieza' : 'Primero seleccione un bloque' }}
+                                        {{
+                                            piezas.length
+                                                ? "Seleccione una pieza"
+                                                : "Primero seleccione un bloque"
+                                        }}
                                     </option>
-                                    <option v-for="pieza in piezas" :key="pieza.id" :value="pieza.id">
-                                        {{ pieza.codigo }} - {{ pieza.nombre }} ({{ pieza.peso_teorico }} kg)
+                                    <option
+                                        v-for="pieza in piezas"
+                                        :key="pieza.id"
+                                        :value="pieza.id"
+                                    >
+                                        {{ pieza.codigo }} -
+                                        {{ pieza.nombre }} ({{
+                                            pieza.peso_teorico
+                                        }}
+                                        kg)
                                     </option>
                                 </select>
                             </div>
 
                             <!-- Peso Teórico (readonly) -->
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Peso Teórico (kg)
                                 </label>
                                 <input
                                     type="text"
-                                    :value="piezaSeleccionada ? piezaSeleccionada.peso_teorico : ''"
+                                    :value="
+                                        piezaSeleccionada
+                                            ? piezaSeleccionada.peso_teorico
+                                            : ''
+                                    "
                                     readonly
                                     placeholder="Seleccione una pieza"
                                     class="w-full px-4 py-3 border border-blue-200 rounded-xl bg-blue-50/50 text-slate-600 font-medium shadow-inner"
@@ -481,7 +606,10 @@ Minucia/
 
                             <!-- Peso Real -->
                             <div>
-                                <label for="peso_real" class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    for="peso_real"
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Peso Real (kg) *
                                 </label>
                                 <input
@@ -498,7 +626,9 @@ Minucia/
 
                             <!-- Diferencia de Peso -->
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Diferencia de Peso (kg)
                                 </label>
                                 <input
@@ -516,7 +646,10 @@ Minucia/
 
                             <!-- Observaciones -->
                             <div>
-                                <label for="observaciones" class="block text-sm font-bold text-slate-700 mb-3">
+                                <label
+                                    for="observaciones"
+                                    class="block text-sm font-bold text-slate-700 mb-3"
+                                >
                                     Observaciones
                                 </label>
                                 <textarea
@@ -542,14 +675,34 @@ Minucia/
                                     class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 border border-transparent rounded-xl text-sm font-bold text-white hover:from-blue-700 hover:to-blue-800 disabled:opacity-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                                 >
                                     <span v-if="processing">
-                                        <svg class="w-4 h-4 inline mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                        <svg
+                                            class="w-4 h-4 inline mr-2 animate-spin"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                                            />
                                         </svg>
                                         Guardando...
                                     </span>
                                     <span v-else>
-                                        <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        <svg
+                                            class="w-4 h-4 inline mr-2"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
                                         </svg>
                                         Guardar Registro
                                     </span>
@@ -584,6 +737,7 @@ Reportes/
 ```
 
 #### PiezasPendientes.vue
+
 ```vue
 <template>
     <AppLayout title="Piezas Pendientes">
@@ -596,15 +750,29 @@ Reportes/
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <!-- Filtros -->
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
+                <div
+                    class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6"
+                >
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Proyecto</label>
-                                <select v-model="filtroProyecto" @change="filtrarDatos" 
-                                        class="mt-1 block w-full border-gray-300 rounded-md">
-                                    <option value="">Todos los proyectos</option>
-                                    <option v-for="proyecto in proyectos" :key="proyecto.id" :value="proyecto.id">
+                                <label
+                                    class="block text-sm font-medium text-gray-700"
+                                    >Proyecto</label
+                                >
+                                <select
+                                    v-model="filtroProyecto"
+                                    @change="filtrarDatos"
+                                    class="mt-1 block w-full border-gray-300 rounded-md"
+                                >
+                                    <option value="">
+                                        Todos los proyectos
+                                    </option>
+                                    <option
+                                        v-for="proyecto in proyectos"
+                                        :key="proyecto.id"
+                                        :value="proyecto.id"
+                                    >
                                         {{ proyecto.nombre }}
                                     </option>
                                 </select>
@@ -620,45 +788,74 @@ Reportes/
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Proyecto
                                         </th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Bloque
                                         </th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Código
                                         </th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Pieza
                                         </th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Peso Teórico (kg)
                                         </th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
                                             Estado
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr v-for="pieza in piezasFiltradas" :key="pieza.id">
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <tbody
+                                    class="bg-white divide-y divide-gray-200"
+                                >
+                                    <tr
+                                        v-for="pieza in piezasFiltradas"
+                                        :key="pieza.id"
+                                    >
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                                        >
                                             {{ pieza.proyecto.nombre }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                                        >
                                             {{ pieza.bloque.nombre }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                                        >
                                             {{ pieza.codigo }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                                        >
                                             {{ pieza.nombre }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                                        >
                                             {{ pieza.peso_teorico }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                            <span
+                                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800"
+                                            >
                                                 {{ pieza.estado }}
                                             </span>
                                         </td>
@@ -690,7 +887,7 @@ Reportes/
 /* Estilos personalizados para COTECMAR */
 @layer base {
     html {
-        font-family: 'Inter', system-ui, sans-serif;
+        font-family: "Inter", system-ui, sans-serif;
     }
 }
 
@@ -765,18 +962,22 @@ Reportes/
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideUp {
-        from { 
-            opacity: 0; 
-            transform: translateY(10px); 
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
-        to { 
-            opacity: 1; 
-            transform: translateY(0); 
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }
@@ -810,19 +1011,23 @@ Reportes/
 ### app.js - Configuración de Vue
 
 ```javascript
-import './bootstrap';
-import '../css/app.css';
+import "./bootstrap";
+import "../css/app.css";
 
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/vue3';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { createApp, h } from "vue";
+import { createInertiaApp } from "@inertiajs/vue3";
+import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 
-const appName = import.meta.env.VITE_APP_NAME || 'Sistema COTECMAR';
+const appName = import.meta.env.VITE_APP_NAME || "Sistema COTECMAR";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    resolve: (name) =>
+        resolvePageComponent(
+            `./Pages/${name}.vue`,
+            import.meta.glob("./Pages/**/*.vue")
+        ),
     setup({ el, App, props, plugin }) {
         return createApp({ render: () => h(App, props) })
             .use(plugin)
@@ -830,7 +1035,7 @@ createInertiaApp({
             .mount(el);
     },
     progress: {
-        color: '#4F46E5', // Color azul de COTECMAR
+        color: "#4F46E5", // Color azul de COTECMAR
         showSpinner: true,
     },
 });
@@ -839,27 +1044,29 @@ createInertiaApp({
 ### bootstrap.js - Configuración HTTP
 
 ```javascript
-import axios from 'axios';
+import axios from "axios";
 window.axios = axios;
 
 // Configuración de headers por defecto
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 // Configurar token CSRF para todas las peticiones
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error(
+        "CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token"
+    );
 }
 
 // Interceptor para manejo global de errores
 window.axios.interceptors.response.use(
-    response => response,
-    error => {
+    (response) => response,
+    (error) => {
         if (error.response.status === 401) {
-            window.location.href = '/login';
+            window.location.href = "/login";
         }
         if (error.response.status === 419) {
             // Token CSRF expirado
@@ -881,14 +1088,14 @@ window.axios.interceptors.response.use(
 module.exports = {
     theme: {
         screens: {
-            'sm': '640px',   // Móviles grandes
-            'md': '768px',   // Tablets
-            'lg': '1024px',  // Laptops
-            'xl': '1280px',  // Escritorio
-            '2xl': '1536px', // Pantallas grandes
-        }
-    }
-}
+            sm: "640px", // Móviles grandes
+            md: "768px", // Tablets
+            lg: "1024px", // Laptops
+            xl: "1280px", // Escritorio
+            "2xl": "1536px", // Pantallas grandes
+        },
+    },
+};
 ```
 
 ### Estrategias Responsive
@@ -908,14 +1115,14 @@ module.exports = {
 ### Vite Configuration (vite.config.js)
 
 ```javascript
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: 'resources/js/app.js',
+            input: "resources/js/app.js",
             refresh: true,
         }),
         vue({
@@ -929,7 +1136,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': '/resources/js',
+            "@": "/resources/js",
         },
     },
 });
@@ -959,51 +1166,59 @@ npm run type-check
 ## 🎯 Mejores Prácticas Implementadas
 
 ### 1. **Composición de Componentes**
-- ✅ Componentes reutilizables y modulares
-- ✅ Props tipadas con PropTypes
-- ✅ Eventos customizados para comunicación
-- ✅ Slots para contenido dinámico
+
+-   ✅ Componentes reutilizables y modulares
+-   ✅ Props tipadas con PropTypes
+-   ✅ Eventos customizados para comunicación
+-   ✅ Slots para contenido dinámico
 
 ### 2. **Estado y Reactividad**
-- ✅ Composition API con `ref()` y `reactive()`
-- ✅ Computed properties para datos derivados
-- ✅ Watchers para efectos secundarios
-- ✅ Store pattern para estado global
+
+-   ✅ Composition API con `ref()` y `reactive()`
+-   ✅ Computed properties para datos derivados
+-   ✅ Watchers para efectos secundarios
+-   ✅ Store pattern para estado global
 
 ### 3. **Performance**
-- ✅ Lazy loading de páginas con `import()`
-- ✅ Code splitting automático por rutas
-- ✅ Optimización de imágenes
-- ✅ Minificación en producción
+
+-   ✅ Lazy loading de páginas con `import()`
+-   ✅ Code splitting automático por rutas
+-   ✅ Optimización de imágenes
+-   ✅ Minificación en producción
 
 ### 4. **Accesibilidad**
-- ✅ Labels asociados a inputs
-- ✅ ARIA attributes donde es necesario
-- ✅ Navegación por teclado
-- ✅ Contraste adecuado de colores
+
+-   ✅ Labels asociados a inputs
+-   ✅ ARIA attributes donde es necesario
+-   ✅ Navegación por teclado
+-   ✅ Contraste adecuado de colores
 
 ### 5. **SEO**
-- ✅ Meta tags dinámicos con Inertia Head
-- ✅ Títulos descriptivos por página
-- ✅ URLs semánticas
-- ✅ Estructura HTML semántica
+
+-   ✅ Meta tags dinámicos con Inertia Head
+-   ✅ Títulos descriptivos por página
+-   ✅ URLs semánticas
+-   ✅ Estructura HTML semántica
 
 ---
 
 ## 🐛 Debugging y Herramientas
 
 ### Vue DevTools
+
 ```bash
 # Instalar Vue DevTools en el navegador
 # https://devtools.vuejs.org/
 ```
 
 ### Laravel Debugbar (Desarrollo)
+
 ```bash
 composer require barryvdh/laravel-debugbar --dev
 ```
 
 ### Console Debugging
+
 ```javascript
 // En componentes Vue
 console.log('Current user:', this.$page.props.auth.user);
@@ -1027,11 +1242,13 @@ methods: {
 ## 📈 Métricas de Performance
 
 ### Core Web Vitals
-- **LCP** (Largest Contentful Paint): < 2.5s
-- **FID** (First Input Delay): < 100ms  
-- **CLS** (Cumulative Layout Shift): < 0.1
+
+-   **LCP** (Largest Contentful Paint): < 2.5s
+-   **FID** (First Input Delay): < 100ms
+-   **CLS** (Cumulative Layout Shift): < 0.1
 
 ### Bundle Size Analysis
+
 ```bash
 # Analizar tamaño del bundle
 npm run build -- --analyze
@@ -1045,32 +1262,34 @@ npm list --depth=0
 ## 🔄 Patrones de Estado
 
 ### Form Management con Inertia
+
 ```javascript
 // En un componente
-import { useForm } from '@inertiajs/vue3';
+import { useForm } from "@inertiajs/vue3";
 
 const form = useForm({
-    proyecto_id: '',
-    bloque_id: '',
-    pieza_id: '',
-    peso_real: '',
-    observaciones: ''
+    proyecto_id: "",
+    bloque_id: "",
+    pieza_id: "",
+    peso_real: "",
+    observaciones: "",
 });
 
 // Métodos del form
-form.post(route('minucia.store'), {
+form.post(route("minucia.store"), {
     onSuccess: () => {
         // Éxito
         form.reset();
     },
     onError: (errors) => {
         // Manejo de errores
-        console.error('Form errors:', errors);
-    }
+        console.error("Form errors:", errors);
+    },
 });
 ```
 
 ### Carga de Datos Asíncrona
+
 ```javascript
 // Cargar datos dinámicamente
 const cargarBloques = async (proyectoId) => {
@@ -1078,7 +1297,7 @@ const cargarBloques = async (proyectoId) => {
         const response = await axios.get(`/api/bloques/proyecto/${proyectoId}`);
         bloques.value = response.data;
     } catch (error) {
-        console.error('Error cargando bloques:', error);
+        console.error("Error cargando bloques:", error);
         bloques.value = [];
     }
 };

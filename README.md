@@ -1,4 +1,5 @@
 # 🚢 Sistema de Gestión de Minucia - COTECMAR
+
 ## 🧪 Prueba Técnica de Desarrollo
 
 <div align="center">
@@ -20,35 +21,37 @@
 El **Sistema de Gestión de Minucia** es una **prueba técnica completa** desarrollada para demostrar competencias en desarrollo web full-stack para COTECMAR (Corporación de Ciencia y Tecnología para el Desarrollo de la Industria Naval Marítima y Fluvial).
 
 ### 🎯 Objetivos de la Prueba Técnica:
-- ✅ **Registro de piezas** fabricadas vs. especificaciones teóricas
-- ⚖️ **Control de peso** y diferencias con valores teóricos  
-- 📊 **Reportes en tiempo real** de progreso de proyectos
-- 🔐 **Autenticación segura** y control de acceso
-- 📱 **Interfaz responsive** optimizada para dispositivos móviles
-- 🏗️ **Arquitectura escalable** y buenas prácticas de desarrollo
 
-![Dashboard Preview](./docs/images/dashboard-preview.png)
+-   ✅ **Registro de piezas** fabricadas vs. especificaciones teóricas
+-   ⚖️ **Control de peso** y diferencias con valores teóricos
+-   📊 **Reportes en tiempo real** de progreso de proyectos
+-   🔐 **Autenticación segura** y control de acceso
+-   📱 **Interfaz responsive** optimizada para dispositivos móviles
+-   🏗️ **Arquitectura escalable** y buenas prácticas de desarrollo
+
+![Dashboard Preview](./docs/images/dashboard.png)
 
 ## 🛠️ Stack Tecnológico
 
 ### Backend
-- **Laravel 10** - Framework PHP robusto
-- **SQLite** - Base de datos ligera y eficiente
-- **Eloquent ORM** - Manejo avanzado de datos
-- **Laravel Jetstream** - Autenticación y gestión de usuarios
 
-### Frontend  
-- **Vue.js 3** - Framework JavaScript reactivo
-- **Inertia.js** - SPA sin API separada
-- **Tailwind CSS** - Framework de estilos moderno
-- **Chart.js** - Gráficos interactivos
+-   **Laravel 10** - Framework PHP robusto
+-   **SQLite** - Base de datos ligera y eficiente
+-   **Eloquent ORM** - Manejo avanzado de datos
+-   **Laravel Jetstream** - Autenticación y gestión de usuarios
+
+### Frontend
+
+-   **Vue.js 3** - Framework JavaScript reactivo
+-   **Inertia.js** - SPA sin API separada
+-   **Tailwind CSS** - Framework de estilos moderno
+-   **Chart.js** - Gráficos interactivos
 
 ### Herramientas de Desarrollo
-- **Vite** - Bundler rápido para desarrollo
-- **Axios** - Cliente HTTP para APIs
-- **NPM** - Gestión de dependencias
 
-![Tech Stack](./docs/images/tech-stack.png)
+-   **Vite** - Bundler rápido para desarrollo
+-   **Axios** - Cliente HTTP para APIs
+-   **NPM** - Gestión de dependencias
 
 ## 🏗️ Arquitectura del Sistema
 
@@ -63,14 +66,15 @@ El **Sistema de Gestión de Minucia** es una **prueba técnica completa** desarr
 
 ## 📁 Documentación Detallada
 
-- 📂 **[Estructura de Base de Datos](./database/README.md)** - Esquemas, relaciones y migraciones
-- 🎨 **[Estructura de Vistas](./resources/README.md)** - Componentes Vue.js y arquitectura frontend
-- 🔧 **[Manual de Instalación](./docs/INSTALL.md)** - Guía paso a paso
-- 👥 **[Manual de Usuario](./docs/USER_GUIDE.md)** - Cómo usar el sistema
+-   📂 **[Estructura de Base de Datos](./database/README.md)** - Esquemas, relaciones y migraciones
+-   🎨 **[Estructura de Vistas](./resources/README.md)** - Componentes Vue.js y arquitectura frontend
+-   🔧 **[Manual de Instalación](./docs/INSTALL.md)** - Guía paso a paso
+-   👥 **[Manual de Usuario](./docs/USER_GUIDE.md)** - Cómo usar el sistema
 
 ## ⚡ Instalación Rápida
 
 ### Prerrequisitos
+
 ```bash
 # Verificar versiones
 php --version  # >= 8.1
@@ -80,6 +84,7 @@ npm --version
 ```
 
 ### Instalación
+
 ```bash
 # 1. Clonar repositorio
 git clone [URL_REPOSITORIO]
@@ -103,56 +108,57 @@ npm run build
 php artisan serve
 ```
 
-![Installation Steps](./docs/images/installation-steps.png)
-
 ## 👤 Usuarios de Prueba
 
-| Rol | Email | Contraseña | Permisos |
-|-----|-------|------------|----------|
-| **Administrador** | admin@cotecmar.com | password123 | Acceso completo |
-| **Operador** | operador@cotecmar.com | password123 | Registro de piezas |
+| Rol               | Email                 | Contraseña  | Permisos           |
+| ----------------- | --------------------- | ----------- | ------------------ |
+| **Administrador** | admin@cotecmar.com    | password123 | Acceso completo    |
+| **Operador**      | operador@cotecmar.com | password123 | Registro de piezas |
 
 ## 🎯 Cumplimiento de Requerimientos - Prueba Técnica
 
 ### ✅ Requerimientos Básicos (RB) - 100% Completados
-- [x] **Login con validación** de usuarios autorizados ✅
-- [x] **Redirección automática** tras autenticación exitosa ✅
-- [x] **Formulario principal** que actualiza tabla de piezas ✅
-- [x] **Fecha y hora automática** del sistema ✅
-- [x] **Selects dependientes**: Proyecto → Bloque → Pieza ✅
-- [x] **Carga automática** de peso teórico ✅
-- [x] **Campo de peso real** con validación ✅
-- [x] **Botón de registro** funcional ✅
+
+-   [x] **Login con validación** de usuarios autorizados ✅
+-   [x] **Redirección automática** tras autenticación exitosa ✅
+-   [x] **Formulario principal** que actualiza tabla de piezas ✅
+-   [x] **Fecha y hora automática** del sistema ✅
+-   [x] **Selects dependientes**: Proyecto → Bloque → Pieza ✅
+-   [x] **Carga automática** de peso teórico ✅
+-   [x] **Campo de peso real** con validación ✅
+-   [x] **Botón de registro** funcional ✅
 
 ### ✅ Requerimientos Adicionales (RA) - 100% Completados
-- [x] **Protección de rutas** con middleware de autenticación ✅
-- [x] **Filtro de piezas** por estado (solo pendientes) ✅
-- [x] **Cálculo automático** de diferencia de peso ✅
-- [x] Validaciones en tiempo real (client-side)
-- [x] Preservación de datos en caso de error
-- [x] Diseño responsive para móviles y tablets
-- [x] Reporte de piezas pendientes agrupadas
-- [x] Dashboard con gráficos interactivos
 
-![Features Overview](./docs/images/features-overview.png)
+-   [x] **Protección de rutas** con middleware de autenticación ✅
+-   [x] **Filtro de piezas** por estado (solo pendientes) ✅
+-   [x] **Cálculo automático** de diferencia de peso ✅
+-   [x] Validaciones en tiempo real (client-side)
+-   [x] Preservación de datos en caso de error
+-   [x] Diseño responsive para móviles y tablets
+-   [x] Reporte de piezas pendientes agrupadas
+-   [x] Dashboard con gráficos interactivos
 
 ## 📊 Capturas del Sistema
 
 ### Dashboard Principal
-![Dashboard](./docs/images/dashboard.png)
+
+![Dashboard](./docs/images/dashboar-complet.png)
 
 ### Formulario de Registro
+
 ![Registration Form](./docs/images/registration-form.png)
 
 ### Reportes
+
 ![Reports](./docs/images/reports.png)
 
 ## 🚀 Enlaces Rápidos
 
-- 🌐 **Aplicación Local**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-- 📊 **Dashboard**: [/dashboard](http://127.0.0.1:8000/dashboard)
-- 📝 **Registro**: [/minucia/registro](http://127.0.0.1:8000/minucia/registro)
-- 📈 **Reportes**: [/reportes/piezas-pendientes](http://127.0.0.1:8000/reportes/piezas-pendientes)
+-   🌐 **Aplicación Local**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+-   📊 **Dashboard**: [/dashboard](http://127.0.0.1:8000/dashboard)
+-   📝 **Registro**: [/minucia/registro](http://127.0.0.1:8000/minucia/registro)
+-   📈 **Reportes**: [/reportes/piezas-pendientes](http://127.0.0.1:8000/reportes/piezas-pendientes)
 
 ## 🔧 Comandos Útiles
 
@@ -174,7 +180,7 @@ npm run watch        # Compilar en modo watch
 
 **Desarrollador**: Aldair Gutierrez Guerrero  
 **Email**: [contacto@email.com]  
-**Proyecto**: Sistema de Gestión de Minucia - COTECMAR  
+**Proyecto**: Sistema de Gestión de Minucia - COTECMAR
 
 ---
 
@@ -182,59 +188,55 @@ npm run watch        # Compilar en modo watch
   <strong>🚢 Desarrollado para COTECMAR - Corporación de Ciencia y Tecnología Naval 🚢</strong>
 </div>
 
-- [x] **Botón de registro** que guarda información1. **Autenticación y Seguridad**
+-   [x] **Botón de registro** que guarda información1. **Autenticación y Seguridad**
 
-   - Login con validación de usuario y contraseña
+    -   Login con validación de usuario y contraseña
 
-### ✅ Requerimientos Adicionales (RA) Cumplidos:   - Redirección automática tras login exitoso
+### ✅ Requerimientos Adicionales (RA) Cumplidos: - Redirección automática tras login exitoso
 
-- [x] **Protección de URL** - mensaje de error al acceder sin login   - Protección de rutas (middleware auth)
+-   [x] **Protección de URL** - mensaje de error al acceder sin login - Protección de rutas (middleware auth)
 
-- [x] **Filtro de piezas**: solo muestra piezas en estado "Pendiente"   - Prevención de acceso directo sin autenticación
+-   [x] **Filtro de piezas**: solo muestra piezas en estado "Pendiente" - Prevención de acceso directo sin autenticación
 
-- [x] **Campo diferencia**: calcula automáticamente peso_real - peso_teórico
+-   [x] **Campo diferencia**: calcula automáticamente peso_real - peso_teórico
 
-- [x] **Validación en navegador** (no en servidor)2. **Formulario Principal**
+-   [x] **Validación en navegador** (no en servidor)2. **Formulario Principal**
 
-- [x] **Manejo de errores**: mantiene datos al fallar validación   - Fecha y hora automática del sistema
+-   [x] **Manejo de errores**: mantiene datos al fallar validación - Fecha y hora automática del sistema
 
-- [x] **Diseño responsive** optimizado para móviles y escritorio   - Lista desplegable de proyectos
+-   [x] **Diseño responsive** optimizado para móviles y escritorio - Lista desplegable de proyectos
 
-- [x] **Reporte de piezas pendientes** agrupadas por proyecto   - Lista anidada de bloques por proyecto
+-   [x] **Reporte de piezas pendientes** agrupadas por proyecto - Lista anidada de bloques por proyecto
 
-- [x] **Gráfico por proyecto** (pendientes vs fabricadas)   - Lista de piezas por bloque (solo pendientes)
+-   [x] **Gráfico por proyecto** (pendientes vs fabricadas) - Lista de piezas por bloque (solo pendientes)
 
-   - Carga automática de peso teórico
+    -   Carga automática de peso teórico
 
-## 🗄️ Estructura de Base de Datos   - Campo de ingreso de peso real
+## 🗄️ Estructura de Base de Datos - Campo de ingreso de peso real
 
-   - Validación numérica del peso real
+-   Validación numérica del peso real
 
-### Tablas Principales:   - Botón de registro
-
-
+### Tablas Principales: - Botón de registro
 
 **users** (Tabla 1)3. **Base de Datos**
 
-- Usuarios del sistema con autenticación   - SQLite como motor de base de datos
+-   Usuarios del sistema con autenticación - SQLite como motor de base de datos
 
-   - Migraciones para estructura de tablas
+    -   Migraciones para estructura de tablas
 
-**proyectos** (Tabla 2)   - Seeders con datos de prueba
+**proyectos** (Tabla 2) - Seeders con datos de prueba
 
-- Proyectos navales (FRAG, BICM, BALC)   - Relaciones entre entidades
-
-
+-   Proyectos navales (FRAG, BICM, BALC) - Relaciones entre entidades
 
 **bloques** (Tabla 3)### ✅ Requerimientos Adicionales (RA)
 
-- Bloques que pertenecen a cada proyecto
+-   Bloques que pertenecen a cada proyecto
 
 1. **Funcionalidades Avanzadas**
 
-**piezas** (Tabla 4) - **TABLA PRINCIPAL**   - Filtrado de piezas por estado (solo pendientes)
+**piezas** (Tabla 4) - **TABLA PRINCIPAL** - Filtrado de piezas por estado (solo pendientes)
 
-```sql   - Cálculo automático de diferencia de peso
+````sql - Cálculo automático de diferencia de peso
 
 - id (PK)   - Validaciones en el navegador (client-side)
 
@@ -344,13 +346,13 @@ DB_CONNECTION=sqlite- Node.js y NPM
 
 DB_DATABASE=/ruta/absoluta/al/proyecto/database/database.sqlite- Extensión SQLite para PHP
 
-```
+````
 
 ### Pasos de Instalación
 
 5. **Crear base de datos SQLite**
 
-```bash1. **Clonar el repositorio**
+```````bash1. **Clonar el repositorio**
 
 touch database/database.sqlite```bash
 
@@ -388,17 +390,15 @@ npm run build4. **Configurar el archivo de entorno**
 
 npm run devcp .env.example .env
 
-``````
-
-
+```````
 
 9. **Iniciar servidor**5. **Generar clave de aplicación**
 
-```bash```bash
+`bash`bash
 
 php artisan servephp artisan key:generate
 
-``````
+````
 
 
 
@@ -579,7 +579,7 @@ routes/
 
 ### � Detalles de Implementación
 - **Candidato**: Aldair Gutierrez Guerrero
-- **Posición**: Desarrollador Full-Stack  
+- **Posición**: Desarrollador Full-Stack
 - **Empresa**: COTECMAR
 - **Fecha de entrega**: Octubre 2024
 - **Tiempo de desarrollo**: [Completado según cronograma]
@@ -612,9 +612,9 @@ routes/
 
 Una vez finalizada la revisión del código, favor contactar para agendar la sustentación técnica del proyecto.
 
-**Desarrollador**: Aldair Gutierrez Guerrero  
-**Email**: [Tu email aquí]  
-**GitHub**: https://github.com/aldairg-dev/ptc-cotecmar  
+**Desarrollador**: Aldair Gutierrez Guerrero
+**Email**: [Tu email aquí]
+**GitHub**: https://github.com/aldairg-dev/ptc-cotecmar
 **LinkedIn**: [Tu perfil de LinkedIn]
 
 ---
@@ -625,10 +625,10 @@ Una vez finalizada la revisión del código, favor contactar para agendar la sus
 
 **Este proyecto fue desarrollado específicamente como una prueba técnica para COTECMAR**
 
-✅ **Cumple al 100%** todos los requerimientos básicos y adicionales  
-📋 **Documentación completa** incluida para evaluación  
-🔧 **Código limpio** siguiendo mejores prácticas  
-🚀 **Listo para producción** con deployment configurado  
+✅ **Cumple al 100%** todos los requerimientos básicos y adicionales
+📋 **Documentación completa** incluida para evaluación
+🔧 **Código limpio** siguiendo mejores prácticas
+🚀 **Listo para producción** con deployment configurado
 
 **Para revisión técnica:** Todos los archivos están documentados y el sistema está completamente funcional
 
@@ -641,3 +641,4 @@ Una vez finalizada la revisión del código, favor contactar para agendar la sus
   <br>
   <em>Prueba Técnica de Desarrollo Full-Stack</em>
 </div>
+````
