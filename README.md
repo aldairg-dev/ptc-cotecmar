@@ -179,7 +179,6 @@ npm run watch        # Compilar en modo watch
 ## 📞 Soporte y Contacto
 
 **Desarrollador**: Aldair Gutierrez Guerrero  
-**Email**: [contacto@email.com]  
 **Proyecto**: Sistema de Gestión de Minucia - COTECMAR
 
 ---
